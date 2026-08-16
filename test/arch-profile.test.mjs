@@ -84,10 +84,7 @@ test("entry-web：识别 src/main.py + uvicorn 为 web 入口", () => {
 test("entry-cli：识别 cli.py 为 cli 入口", () => {
   const dir = mkdtempSync(join(tmpdir(), "arch-doc-cli-"));
   try {
-    writeFileSync(join(dir, "cli.py"), "import argparse
-
-parser = argparse.ArgumentParser()
-");
+    writeFileSync(join(dir, "cli.py"), "import argparse\n\nparser = argparse.ArgumentParser()\n");
     const { json } = run(dir, "--entry");
     assert.ok(
       json.entry_points.some((e) => e.type === "cli" && e.path === "cli.py"),
@@ -125,10 +122,8 @@ test("skip-excluded：node_modules 下文件不参与扫描", () => {
     mkdirSync(join(dir, "src"));
     mkdirSync(join(dir, "node_modules"));
     writeFileSync(join(dir, "package.json"), "{}");
-    writeFileSync(join(dir, "src", "app.js"), "const x = 1;
-");
-    writeFileSync(join(dir, "node_modules", "evil.js"), "const y = 1;
-");
+    writeFileSync(join(dir, "src", "app.js"), "const x = 1;\n");
+    writeFileSync(join(dir, "node_modules", "evil.js"), "const y = 1;\n");
     const { json } = run(dir, "--all");
     assert.ok(!json.directory_tree.includes("node_modules"), "directory_tree 不应包含 node_modules");
     const allPaths = json.modules.flatMap((m) => [m.path, ...m.key_files]);

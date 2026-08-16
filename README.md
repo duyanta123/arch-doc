@@ -26,9 +26,19 @@ arch-doc/
 
 ## 使用
 
-1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.0`
+1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.1`
 2. 使用：对 Agent 说「用 arch-doc 分析 /path/to/repo」
-3. 本地开发：profile 的 package.json 加 `"arch-doc": "file:D:/.../arch-doc"`，bundles 加 `"arch-doc"`
+3. 本地开发：profile 的 package.json 加 `"arch-doc": "file:<本地路径>/arch-doc"`，bundles 加 `"arch-doc"`
+
+## 输出
+
+- `docs/ARCHITECTURE.md`：结构化架构文档（按 `docs/architecture-template.md` 骨架）
+- `docs/architecture.json`：机器可读的结构化结果
+- `docs/diagrams/module-dependencies.mmd`：Mermaid 模块依赖图
+
+## 环境要求
+
+- Node.js >= 18（运行 `scripts/arch-profile.mjs`；无 Node 时 runbook 自动降级为 shell 手工探测）
 
 ## 脚本
 
@@ -46,3 +56,7 @@ node scripts/arch-profile.mjs <repo_path> --all
 npm test
 node --check scripts/arch-profile.mjs
 ```
+
+## License
+
+[MIT](./LICENSE)

@@ -1,6 +1,13 @@
 # Changelog
 
-## 0.1.0 (未发布)
+## 0.1.1 (2026-08-16)
+
+- 文档清理：移除内部实现方案稿（arch-doc-实现文档.md），公开文档不再包含本地个人路径。
+- `PUBLISHING.md` 重写：状态更新为「已推送 GitHub、npm 包名可用」，补充 dsh-index 提交步骤与版本变更流程，检查清单勾选已达成项。
+- `README.md` 补充输出产物说明、环境要求与 License。
+- 修复 `test/arch-profile.test.mjs` 字符串字面量跨行导致的语法错误，`npm test` 11 项全部通过。
+
+## 0.1.0 (2026-08-16)
 
 - 首个版本：实现 `arch-profile.mjs` 的 probe / scan / deps / entry / all 五类确定性扫描。
 - 提供 `skills/arch-doc/SKILL.md` runbook 与 `docs/architecture-template.md` 输出模板。
