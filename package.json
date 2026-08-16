@@ -1,0 +1,50 @@
+{
+  "name": "arch-doc",
+  "version": "0.1.0",
+  "description": "DSH arch-doc skill plugin: analyze a codebase and generate architecture documentation (module responsibilities, dependencies, entry points and run methods).",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/arch-profile.test.mjs"
+  },
+  "main": "./plugin/index.js",
+  "exports": {
+    ".": "./plugin/index.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "plugin/index.js",
+    "cordis.patch.yml",
+    "skills/",
+    "docs/",
+    "scripts/",
+    "examples/",
+    "README.md",
+    "CHANGELOG.md",
+    "PUBLISHING.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-skill-filesystem": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "architecture",
+    "documentation",
+    "code-analysis",
+    "dependency-graph",
+    "skills"
+  ]
+}

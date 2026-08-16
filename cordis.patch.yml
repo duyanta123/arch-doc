@@ -1,0 +1,11 @@
+# arch-doc — DSH bundle patch.
+#
+# 当某个 profile 在 dsh.profile.bundles 中列出本包时（dsh plugin add 即完成此事），
+# dsh 启动时把本补丁打入配置树：插入本包插件行，加载 package.json 的 main
+# （plugin/index.js），将自带 skills/ 注册为技能根。
+#
+# 人设与工具不在此处重复声明——宿主 profile（web/standard）已提供文件、shell、
+# 计划模式、web 搜索、子代理等 runbook 引用的全部工具。
+- insert:
+    - id: arch-doc
+      name: arch-doc

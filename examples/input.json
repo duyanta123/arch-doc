@@ -1,0 +1,15 @@
+{
+  "repo_path": "/path/to/my-app",
+  "output_format": "both",
+  "output_path": "/path/to/my-app/docs",
+  "max_depth": 3,
+  "exclude_dirs": [
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    "__pycache__",
+    ".venv"
+  ],
+  "generate_mermaid": true
+}

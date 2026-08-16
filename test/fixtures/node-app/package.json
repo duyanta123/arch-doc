@@ -1,0 +1,13 @@
+{
+  "name": "demo-web",
+  "version": "0.1.0",
+  "description": "Demo Node web service",
+  "scripts": {
+    "dev": "node src/server.js",
+    "build": "echo build",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}

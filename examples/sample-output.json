@@ -1,0 +1,78 @@
+{
+  "project": {
+    "name": "my-app",
+    "root": "/path/to/my-app",
+    "language": "python",
+    "repo_type": "monolith",
+    "description": "示例项目",
+    "tech_stack": [
+      "python",
+      "fastapi",
+      "docker"
+    ]
+  },
+  "modules": [
+    {
+      "name": "auth",
+      "path": "src/auth",
+      "responsibility": "用户认证与权限控制",
+      "language": "python",
+      "key_files": [
+        "src/auth/service.py"
+      ]
+    }
+  ],
+  "dependencies": {
+    "internal": [
+      {
+        "source": "api",
+        "target": "auth",
+        "kind": "import",
+        "path": "src/api/router.py"
+      }
+    ],
+    "external": [
+      {
+        "name": "fastapi",
+        "version": "0.115.0",
+        "category": "web"
+      }
+    ]
+  },
+  "entry_points": [
+    {
+      "type": "web",
+      "path": "src/main.py",
+      "command": "uvicorn src.main:app --reload",
+      "description": "API 服务入口"
+    }
+  ],
+  "run_methods": [
+    {
+      "action": "install",
+      "command": "pip install -e .",
+      "workspace": "."
+    },
+    {
+      "action": "dev",
+      "command": "uvicorn src.main:app --reload",
+      "workspace": "."
+    }
+  ],
+  "key_flows": [
+    {
+      "name": "用户登录",
+      "description": "登录请求处理链路",
+      "steps": [
+        "接收请求",
+        "校验参数",
+        "调用 auth 服务",
+        "返回 token"
+      ]
+    }
+  ],
+  "directory_tree": "src/\n├── api/\n├── auth/\n└── main.py",
+  "risks": [
+    "auth 模块通过 importlib 动态加载，需人工确认"
+  ]
+}
