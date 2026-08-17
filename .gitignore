@@ -7,3 +7,12 @@ coverage/
 .idea/
 .vscode/
 *.tgz
+
+# 本地临时产物（探查输出、草稿）
+.tmp/
+tmp/
+
+# 环境与密钥
+.env
+.env.*
+credentials.*
