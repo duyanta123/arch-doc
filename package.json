@@ -4,6 +4,14 @@
   "description": "DSH arch-doc skill plugin: analyze a codebase and generate architecture documentation (module responsibilities, dependencies, entry points and run methods).",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duyanta123/arch-doc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duyanta123/arch-doc/issues"
+  },
+  "homepage": "https://github.com/duyanta123/arch-doc#readme",
   "scripts": {
     "test": "node --test test/arch-profile.test.mjs"
   },
