@@ -62,6 +62,13 @@ npm test
 node --check scripts/arch-profile.mjs
 ```
 
+## 排障
+
+- **生成的 `ARCHITECTURE.md` 里 Mermaid 图不渲染**：`file://` 协议下浏览器直接打开时，CDN 加载的 mermaid.js 受同源策略限制无法自动渲染；用 Typora 等本地渲染编辑器打开，或把 `diagrams/module-dependencies.mmd` 内容粘到 mermaid.live 查看。`.mmd` 源文件语法本身独立有效。
+- **大仓库扫描太慢 / 输出太长**：`--max-depth 3` 起步，必要时降到 2；确认 `exclude_dirs` 覆盖了 `node_modules`、`.venv`、构建产物等大目录。
+- **无 Node 环境时**：runbook 自动降级为 shell 手工探测（`find` / `ls` / 读 `package.json` / `go.mod` / `pyproject.toml`），结论质量略降但流程完整。
+- **识别不到入口点**：先跑 `--probe` 确认项目类型识别正确；混合技术栈仓库以主语言构建文件为准（如 Go+Node 混合，以 `go.mod` 优先）。
+
 ## License
 
 [MIT](./LICENSE)
