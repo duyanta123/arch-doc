@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.2 (2026-09-02)
 
 - `.gitignore` 补充 `.tmp/` 本地临时产物与 `.env` 类密钥忽略。
 - `package.json` 补充 `repository` / `bugs` / `homepage` 元数据。

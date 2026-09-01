@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4c1d95)](https://github.com/topics/dsh-plugin)
 [![dsh-index](https://img.shields.io/badge/dsh--index-arch--doc-blue)](https://dsh-index.xlings.org/packages/arch-doc/)
-[![version](https://img.shields.io/badge/version-0.1.1-green)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.1.2-green)](CHANGELOG.md)
 
 DSH 技能插件：输入代码库路径，自动生成架构文档（模块职责、依赖关系、入口点、运行方式）。
 
