@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- 新增 `prepublishOnly` 钩子：npm 发布前自动运行测试门禁，防止红测试状态发包。
+
 ## 0.1.2 (2026-09-02)
 
 - `.gitignore` 补充 `.tmp/` 本地临时产物与 `.env` 类密钥忽略。
