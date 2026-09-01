@@ -7,7 +7,7 @@
 - 包结构已建成（package.json / cordis.patch.yml / plugin/index.js / skills / docs / scripts / examples / test）。
 - `scripts/arch-profile.mjs` 通过 `node --check`，零依赖、无子进程。
 - `npm test`（node --test）全绿，覆盖 probe / scan / deps / entry / run-methods / output-json / skip-excluded。
-- 源码已推送 GitHub（`main` 分支），npm 包名 `arch-doc` 可用。
+- 源码已推送 GitHub（`main` 分支），npm 包名为 `dsh-arch-doc`（原名 `arch-doc` 触发 npm 防抢注拦截——与既有包 `archdoc` 去连字符后撞名；插件 id 与 GitHub 仓库名保持 `arch-doc` 不变）。
 
 ## 前置条件
 
@@ -31,16 +31,16 @@ git push origin v<version>
 
 ```powershell
 cd <你的本地路径>/arch-doc
-npm view arch-doc version   # 确认包名可用（应 404）
+npm view dsh-arch-doc version   # 确认包名可用（应 404）
 npm login
-npm publish --access public
+npm publish
 ```
 
 ## 步骤 3：安装到 profile（三选一）
 
 ```powershell
 # npm 形态
-dsh plugin --profile web add arch-doc
+dsh plugin --profile web add dsh-arch-doc
 
 # GitHub 形态
 dsh plugin --profile web add github:duyanta123/arch-doc#v<version>
@@ -85,7 +85,7 @@ dsh-index/
 - [x] 输入/输出 JSON 结构稳定
 - [x] 有 `examples/` 示例输出
 - [x] 有 `README.md`、`LICENSE`、`PUBLISHING.md`
-- [x] 包名 `arch-doc` 在 npm 上可用（已确认 404）
+- [x] 包名 `dsh-arch-doc` 在 npm 上可用（`arch-doc` 因与既有包 `archdoc` 撞名被防抢注拦截，2026-09-02 改名）
 - [ ] 本地 profile 安装后技能可被加载并正确输出文档
 - [ ] dsh-index PR 已提交
 
