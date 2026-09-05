@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import process from "node:process";
 
 const DSH_VERSION = "0.1.2-rc.1";
-const MIN_NODE = [22, 12, 0];
+const MIN_NODE = [22, 19, 0];
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const packageJson = JSON.parse(await readFile(join(repoRoot, "package.json"), "utf8"));
 const patchText = await readFile(join(repoRoot, "cordis.patch.yml"), "utf8");
@@ -94,7 +94,7 @@ async function waitForExit(child, timeoutMs) {
 
 async function runCompat() {
   if (!versionAtLeast(process.versions.node, MIN_NODE)) {
-    throw new Error(`DSH ${DSH_VERSION} compat requires Node >=22.12.0; found ${process.versions.node}`);
+    throw new Error(`DSH ${DSH_VERSION} compat requires Node >=22.19.0; found ${process.versions.node}`);
   }
   if (!pluginId) throw new Error("cordis.patch.yml has no plugin id");
   const skillDirs = (await readdir(join(repoRoot, "skills"), { withFileTypes: true }))

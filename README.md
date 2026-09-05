@@ -44,7 +44,7 @@ arch-doc/
 ## 环境要求
 
 - 独立脚本：Node.js >= 18（运行 `scripts/arch-profile.mjs`；无 Node 时 runbook 自动降级为 shell 手工探测）
-- DSH 0.1.2-rc.1 宿主：Node.js >= 22.12
+- DSH 0.1.2-rc.1 宿主：Node.js >= 22.19
 
 ## 脚本
 

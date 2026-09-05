@@ -32,8 +32,8 @@ arch-doc/
 ## 3. CI 与测试门禁
 
 - **独立脚本回归**：`npm test`（=`node --test test/arch-profile.test.mjs`），当前 **11 例**；Node 18/22 矩阵验证脚本，不代表最新 DSH 宿主兼容性。
-- **DSH 宿主兼容**：`npm run test:compat` 固定 `@deepseek-ai/dsh@0.1.2-rc.1`，要求 Node >=22.12，执行临时 profile 的 add、dump-config 和有限时长启动。
-- **GitHub Actions**：`.github/workflows/ci.yml` 保留 ubuntu + windows × Node 18/22 回归，并增加 Node 22.12 compat job。
+- **DSH 宿主兼容**：`npm run test:compat` 固定 `@deepseek-ai/dsh@0.1.2-rc.1`，要求 Node >=22.19，执行临时 profile 的 add、dump-config 和有限时长启动。
+- **GitHub Actions**：`.github/workflows/ci.yml` 保留 ubuntu + windows × Node 18/22 回归，并增加 Node 22.19 compat job。
 - CI 覆盖语言：Python、Node、Go。**新增语言时必须补该语言的 fixture 和契约用例**。
 
 ## 4. 一次完整变更的动作序列
@@ -72,7 +72,7 @@ arch-doc/
 ## 7. 发布前清单
 
 - [ ] `npm test` 全绿（11 例）
-- [ ] `npm run test:compat` 通过（DSH 0.1.2-rc.1 / Node 22.12+）
+- [ ] `npm run test:compat` 通过（DSH 0.1.2-rc.1 / Node 22.19+）
 - [ ] 新增语言/能力时 fixture 与用例齐全
 - [ ] `CHANGELOG.md` 已归并 `Unreleased`
 - [ ] `package.json` `version` 与 tag 一致

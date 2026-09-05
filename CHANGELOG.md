@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-- 增加固定 `@deepseek-ai/dsh@0.1.2-rc.1` 的 `npm run test:compat` 门禁及 Windows/Ubuntu Node 22.12 CI，隔离执行本地 bundle add、配置 dump 和有限时长启动。
-- 文档明确独立脚本支持 Node >=18，最新 DSH 宿主要求 Node >=22.12；安装示例更新为 `v0.1.2`。
+- 增加固定 `@deepseek-ai/dsh@0.1.2-rc.1` 的 `npm run test:compat` 门禁及 Windows/Ubuntu Node 22.19 CI，隔离执行本地 bundle add、配置 dump 和有限时长启动。
+- 文档明确独立脚本支持 Node >=18，最新 DSH 宿主要求 Node >=22.19；安装示例更新为 `v0.1.2`。
 - 修复 `cordis.patch.yml` 的加载包名为 `dsh-arch-doc`，同时保持插件 id `arch-doc` 不变，避免 DSH 启动时报 `ERR_MODULE_NOT_FOUND`。
 - npm 包名改为 `dsh-arch-doc`：`arch-doc` 触发 npm 防抢注拦截（与既有包 `archdoc` 去连字符后撞名，403）。插件 id（cordis.patch.yml / providerName）与 GitHub 仓库名保持 `arch-doc` 不变，仅 npm 分发名变更。
 - 新增 `prepublishOnly` 钩子：npm 发布前自动运行测试门禁，防止红测试状态发包。
