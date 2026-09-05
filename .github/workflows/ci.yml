@@ -35,6 +35,6 @@ jobs:
         with:
           node-version: 22.12.0
       - name: Install pnpm for DSH plugin manager
-        run: npm install --global pnpm@11.7.0
+        run: npm install --global pnpm@10.28.1
       - name: DSH 0.1.2-rc.1 compatibility
         run: npm run test:compat
