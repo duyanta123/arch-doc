@@ -1,0 +1,39 @@
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
+
+      - name: Ensure npm trusted publishing support
+        run: npm install --global npm@11.5.1
+
+      - name: Run package checks
+        run: |
+          node --version
+          npm --version
+          npm run check --if-present
+          npm test
+          npm pack --dry-run
+
+      - name: Publish to npm with OIDC
+        run: npm publish --access public
