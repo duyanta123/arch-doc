@@ -1,6 +1,6 @@
 {
   "name": "dsh-arch-doc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "DSH arch-doc skill plugin: analyze a codebase and generate architecture documentation (module responsibilities, dependencies, entry points and run methods).",
   "license": "MIT",
   "type": "module",

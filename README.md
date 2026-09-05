@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4c1d95)](https://github.com/topics/dsh-plugin)
 [![dsh-index](https://img.shields.io/badge/dsh--index-arch--doc-blue)](https://dsh-index.xlings.org/packages/arch-doc/)
-[![version](https://img.shields.io/badge/version-0.1.2-green)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.1.3-green)](CHANGELOG.md)
 
 DSH 技能插件：输入代码库路径，自动生成架构文档（模块职责、依赖关系、入口点、运行方式）。
 
@@ -31,7 +31,7 @@ arch-doc/
 
 ## 使用
 
-1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.2`
+1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.3`
 2. 使用：对 Agent 说「用 arch-doc 分析 /path/to/repo」
 3. 本地开发：profile 的 package.json 加 `"arch-doc": "file:<本地路径>/arch-doc"`，bundles 加 `"arch-doc"`
 

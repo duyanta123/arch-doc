@@ -8,7 +8,7 @@
 | 项 | 值 |
 |---|---|
 | 类型 | 分析型（代码库 → 架构文档） |
-| 当前版本 | 0.1.2 |
+| 当前版本 | 0.1.3 |
 | 分发状态 | dsh-index / awesome-dsh-plugin / awesome-deepseek-harness 已收录 |
 | 运行时 | 零构建 ESM，`plugin/index.js` 由 harness 加载 |
 | 核心脚本 | `scripts/arch-profile.mjs`（probe / scan / deps / entry / all） |
