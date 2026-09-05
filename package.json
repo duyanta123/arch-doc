@@ -14,6 +14,7 @@
   "homepage": "https://github.com/duyanta123/arch-doc#readme",
   "scripts": {
     "test": "node --test test/arch-profile.test.mjs",
+    "test:compat": "node test/dsh-compat.test.mjs",
     "prepublishOnly": "npm test"
   },
   "main": "./plugin/index.js",

@@ -31,7 +31,7 @@ arch-doc/
 
 ## 使用
 
-1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.1`
+1. 安装：`dsh plugin --profile web add github:duyanta123/arch-doc#v0.1.2`
 2. 使用：对 Agent 说「用 arch-doc 分析 /path/to/repo」
 3. 本地开发：profile 的 package.json 加 `"arch-doc": "file:<本地路径>/arch-doc"`，bundles 加 `"arch-doc"`
 
@@ -43,7 +43,8 @@ arch-doc/
 
 ## 环境要求
 
-- Node.js >= 18（运行 `scripts/arch-profile.mjs`；无 Node 时 runbook 自动降级为 shell 手工探测）
+- 独立脚本：Node.js >= 18（运行 `scripts/arch-profile.mjs`；无 Node 时 runbook 自动降级为 shell 手工探测）
+- DSH 0.1.2-rc.1 宿主：Node.js >= 22.12
 
 ## 脚本
 
@@ -60,6 +61,7 @@ node scripts/arch-profile.mjs <repo_path> --all
 ```bash
 npm test
 node --check scripts/arch-profile.mjs
+npm run test:compat
 ```
 
 ## 排障

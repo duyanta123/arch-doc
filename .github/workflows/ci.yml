@@ -18,7 +18,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: Syntax check
+      - name: Syntax check (independent script)
         run: node --check scripts/arch-profile.mjs
-      - name: Run arch-profile contract tests
+      - name: Independent script regression
         run: node --test test/arch-profile.test.mjs
+
+  compat:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+      - name: DSH 0.1.2-rc.1 compatibility
+        run: npm run test:compat

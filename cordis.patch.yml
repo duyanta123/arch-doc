@@ -8,4 +8,4 @@
 # 计划模式、web 搜索、子代理等 runbook 引用的全部工具。
 - insert:
     - id: arch-doc
-      name: arch-doc
+      name: dsh-arch-doc
